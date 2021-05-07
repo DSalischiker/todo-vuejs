@@ -18,7 +18,8 @@ export default {
     props: ['tasks'],
     data(){
         return{
-
+            /* tasksUnfinished: [],
+            tasksFinished: [], */
         }
     },
     components: {
@@ -30,6 +31,14 @@ export default {
         },
         finishedTask(index){
             this.tasks[index].finished = true;
+        }
+    },
+    computed: {
+        tasksUnfinished() {
+           return this.tasks.filter(task => task.finished == false);
+        },
+        tasksFinished(){
+           return this.tasks.filter(task => task.finished == true);
         }
     }
 }
