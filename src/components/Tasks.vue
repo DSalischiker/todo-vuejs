@@ -1,7 +1,12 @@
 <template>
     <div>
         <ul>
-            <Task v-for="task in tasks" :key="task.id" :task="task" />
+            <Task
+            v-for="(task, $index) in tasks"
+            :key="task.id"
+            :task="task"
+            @deleteTask="deleteTask($index)"
+            @finishedTask="finishedTask($index)"/>
         </ul>
     </div>
 </template>
@@ -18,6 +23,14 @@ export default {
     },
     components: {
         Task,
+    },
+    methods: {
+        deleteTask(index){
+            this.tasks.splice(index, 1);
+        },
+        finishedTask(index){
+            this.tasks[index].finished = true;
+        }
     }
 }
 </script>

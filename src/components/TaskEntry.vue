@@ -8,7 +8,7 @@
 <script>
 export default {
   name: "TaskEntry",
-  props: ['tasks'],
+  props: ["tasks"],
   data() {
     return {
       newTask: "",
@@ -16,8 +16,11 @@ export default {
   },
   methods: {
     addTask() {
-        this.tasks.push(this.newTask);
-        this.newTask = '';
+      this.tasks.push({
+        title: this.newTask,
+        finished: false,
+      });
+      this.newTask = "";
     },
   },
 };
