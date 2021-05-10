@@ -2,38 +2,16 @@
   <div id="app">
     <h1>ToDo List</h1>
     <!-- Components -->
-    <Tasks :tasks="tasks" />
-    <TaskEntry :tasks="tasks" />
+    <ToDoList/>
   </div>
 </template>
 
 <script>
-//imports
-import TaskEntry from "@/components/TaskEntry.vue";
-import Tasks from "@/components/Tasks.vue";
+import ToDoList from '@/components/ToDoList.vue';
 export default {
   name: "App",
-  data() {
-    return {
-      tasks: [
-        {
-          title: "1ra tarea",
-          finished: false,
-        },
-        {
-          title: "2da tarea",
-          finished: false,
-        },
-        {
-          title: "3ra tarea",
-          finished: false,
-        },
-      ],
-    };
-  },
   components: {
-    TaskEntry,
-    Tasks,
+    ToDoList,
   },
 };
 </script>

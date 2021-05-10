@@ -1,6 +1,11 @@
 <template>
   <div>
-    <input v-model="newTask" type="text" placeholder="Ingrese una tarea" />
+    <input
+      v-model="newTask"
+      type="text"
+      @keyup.prevent="keymonitor"
+      placeholder="Ingrese una tarea"
+    />
     <button type="submit" @click="addTask">Agregar Tarea</button>
   </div>
 </template>
@@ -16,11 +21,19 @@ export default {
   },
   methods: {
     addTask() {
-      this.tasks.push({
-        title: this.newTask,
-        finished: false,
-      });
-      this.newTask = "";
+      if (this.newTask != "") {
+        this.tasks.push({
+          title: this.newTask,
+          finished: false,
+        });
+        this.newTask = "";
+      }
+    },
+    keymonitor: function(event) {
+      console.log(event.key);
+      if (event.key == "Enter") {
+        this.addTask();
+      }
     },
   },
 };
