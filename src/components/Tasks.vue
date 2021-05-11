@@ -1,18 +1,28 @@
 <template>
   <div class="tasks-container">
     <div class="filter-container">
-      <button value="all" @click="selected = $event.target.value">
+      <button
+        :class="{ selected: this.selected == 'all' }"
+        value="all"
+        @click="selected = $event.target.value"
+      >
         All
       </button>
-      <button value="unfinished" @click="selected = $event.target.value">
+      <button
+        :class="{ selected: this.selected == 'unfinished' }"
+        value="unfinished"
+        @click="selected = $event.target.value"
+      >
         Unfinished
       </button>
-      <button value="finished" @click="selected = $event.target.value">
+      <button
+        :class="{ selected: this.selected == 'finished' }"
+        value="finished"
+        @click="selected = $event.target.value"
+      >
         Finished
       </button>
     </div>
-    <br />
-    <span>{{ selected }}</span>
     <ul class="tasks-list">
       <Task
         v-for="(task, index) in tasksToShow"
@@ -65,26 +75,48 @@ export default {
 
 <style lang="scss" scoped>
 div.tasks-container {
-  width: 50%;
+  width: 100%;
+  padding: 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: #dfecf5;
-  border-radius: 20px;
+  background-color: #3a3a3a;
+  border-radius: 4px;
 }
-div.filter-container{
-width: 80%;
-display: flex;
-justify-content: flex-start;
-margin: 1em auto 0 auto;
-align-items: center;
-gap: 1em;
+div.filter-container {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 1em auto 0 auto;
+  align-items: center;
+  gap: 1em;
+  button {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    border-radius: 4px;
+    display: inline-block;
+    border: none;
+    padding: 0.5em 1.5em;
+    margin: 0;
+    height: 2.5em;
+    background-color: #242424;
+    color: #ebebeb;
+    &:hover {
+      background-color: #494949;
+    }
+    &.selected {
+      background-color: #ebebeb;
+      color: #242424;
+    }
+  }
 }
-.tasks-list{
-    width: 80%;
-    margin: 1em auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.tasks-list {
+  width: 90%;
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="todolist-container">
     <Tasks :tasks="tasks" />
     <TaskEntry :tasks="tasks" />
   </div>
@@ -15,23 +15,23 @@ export default {
     return {
       tasks: [
         {
-          title: "1",
+          title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
           finished: false,
         },
         {
-          title: "2",
+          title: "Vestibulum vitae libero nec metus dapibus rutrum ut vel est.",
           finished: true,
         },
         {
-          title: "3",
+          title: "Sed pharetra diam quis arcu semper, ac facilisis elit vestibulum.",
           finished: false,
         },
         {
-          title: "4",
+          title: "Integer varius nunc quis luctus tincidunt.",
           finished: true,
         },
         {
-          title: "5",
+          title: "Phasellus a nunc non ligula iaculis sollicitudin.",
           finished: false,
         },
       ],
@@ -44,4 +44,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+#todolist-container{
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+button{
+  cursor: pointer;
+}
+</style>

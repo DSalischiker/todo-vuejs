@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="taskentry-container">
     <input
       v-model="newTask"
       type="text"
@@ -39,4 +39,35 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#taskentry-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+input {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 0.5em 0 0.5em 0;
+  display: inline-block;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+button {
+  width: 25%;
+  padding: 12px 20px;
+  display: inline-block;
+  margin: 0.5em 0 0.5em 0;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #53d647;
+  color: #ebebeb;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+</style>
