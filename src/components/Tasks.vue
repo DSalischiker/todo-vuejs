@@ -75,6 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 div.tasks-container {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   width: 100%;
   padding: 0;
   margin: 0 auto;

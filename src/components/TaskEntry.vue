@@ -1,12 +1,12 @@
 <template>
-  <div id="taskentry-container">
+  <div class="taskentry-container">
     <input
       v-model="newTask"
       type="text"
       @keyup.prevent="keymonitor"
       placeholder="Ingrese una tarea"
     />
-    <button type="submit" @click="addTask">Agregar Tarea</button>
+    <button class="taskentry-button" type="submit" @click="addTask">Agregar Tarea</button>
   </div>
 </template>
 
@@ -40,12 +40,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#taskentry-container {
+.taskentry-container {
+
   display: flex;
   justify-content: space-between;
   gap: 0.5em;
 }
 input {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   width: 75%;
   padding: 12px 20px;
   margin: 0.5em 0 0.5em 0;
@@ -55,7 +57,8 @@ input {
   box-sizing: border-box;
   font-size: 14px;
 }
-button {
+.taskentry-button {
+  box-shadow: rgba(68, 241, 68, 0.25) 0px 25px 50px -12px;
   width: 25%;
   padding: 12px 20px;
   display: inline-block;
@@ -69,5 +72,8 @@ button {
   text-transform: uppercase;
   font-size: 10px;
   letter-spacing: 3px;
+}
+.taskentry-button:hover{
+  background-color: #62f055;
 }
 </style>

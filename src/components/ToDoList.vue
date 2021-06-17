@@ -1,5 +1,5 @@
 <template>
-  <div id="todolist-container">
+  <div class="todolist-container">
     <Tasks :tasks="tasks" />
     <TaskEntry :tasks="tasks" />
   </div>
@@ -45,7 +45,8 @@ export default {
 </script>
 
 <style lang="scss">
-#todolist-container{
+.todolist-container{
+
   width: 80%;
   max-width: 800px;
   margin: 0 auto;
